@@ -59,14 +59,9 @@ public class Player : IComparable<Player>
     }
 
     //метод получающий рейтинг с fesa
-
-    /*
-     * need to search "Dan" and "Kyu" if difference is small
-     * take  bigger and count from him
-     */
     private int get_rating()
     {
-        string urlStr = "http://www.shogi.net/fesa/index.php?mid=5&player=" + this.Name + "+" + this.Surname;
+        string urlStr = "http://www.shogi.net/fesa/index.php?mid=5&player=" + Name + "+" + Surname;
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlStr);
         request.UserAgent = "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)";
         WebResponse response = request.GetResponse();
@@ -77,14 +72,15 @@ public class Player : IComparable<Player>
         reader.Close();
         response.Close();
 
+        int n = 0;
 
-
-        int beg = s.IndexOf("Kyu") + 17;
-        int followers = Int32.Parse(s.Substring(beg, s.IndexOf(",", beg) - beg));
-        beg = s.IndexOf("views_count") + 13;
-        int views = Int32.Parse(s.Substring(beg, s.IndexOf(",", beg) - beg));
-        Console.WriteLine("{0,-18} {1,6} {2,8}", "ass", followers, views);
-
+        for (int i = 0; i < 5; i++)
+        {
+            n = s.IndexOf("</td><td>", n + 1);
+            string rating = s.Substring(n + 9, s.IndexOf('<', n + 9) - n - 9);
+            if (!rating.Contains(" ")) return Int32.Parse(rating);
+        }
         return 1;
     }
 }
+
