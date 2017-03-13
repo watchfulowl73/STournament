@@ -29,10 +29,11 @@ namespace STournament
         {
             string n = tB_Name.Text;
             string s = tB_Surname.Text;
-            if (tB_Rating.Text == null)
+            if (tB_Rating.Text == "")
             {
                 Form1.pleaseAdd(n, s);
                 this.Close();
+                return;
             }
             int r = int.Parse(tB_Rating.Text);
             Form1.pleaseAdd(n,s,r);

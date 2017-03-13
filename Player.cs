@@ -4,8 +4,8 @@ using System.Net;
 using System.Globalization;
 public class Player : IComparable<Player>
 {
-    private String Name;
-    private String Surname;
+    public string Name;
+    public string Surname;
     private int rating;
     public int coeff_1;
     public int coeff_2;

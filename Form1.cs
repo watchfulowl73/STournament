@@ -14,7 +14,10 @@ namespace STournament
     public partial class Form1 : Form
     {
         static List<Player> players = new List<Player>();
+        static List<TextBox> tb_SurnList = new List<TextBox>();
+        static List<TextBox> tb_NameList = new List<TextBox>();
         
+
         public Form1() { InitializeComponent();}
 
         private void Form1_Load(object sender, EventArgs e) {}
@@ -33,23 +36,12 @@ namespace STournament
         
         private void addPlayer_B_Click(object sender, EventArgs e)
         {
-            addPlayer_WF wf = new addPlayer_WF();
-            wf.Show();       
+                 
         }
 
         private void start_B_Click(object sender, EventArgs e)
         {
-            if(players.Count - 1 < table.RowCount)
-            {
-                this.Height += 20;
-                table.RowCount++;
-            }
-
-            //TheTextBox.Clear();
-            for (int i = 0; i < players.Count; i++)
-            {                
-              //  TheTextBox.Text += players[i].ToString() + "\n";
-            }
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -57,5 +49,40 @@ namespace STournament
 
         }
 
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPlayer_WF wf = new addPlayer_WF();
+            wf.Show();
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (players.Count > table.RowCount)
+            {
+                this.Height += 20;
+                table.RowCount++;
+            }
+            while (players.Count > tb_SurnList.Count)
+            {
+                //TextBox tb_n = new TextBox { AutoSize = true, Name = "tB" };
+                //TextBox tb_s = new TextBox { AutoSize = true, Name = "tB" };
+                //table.Controls.Add(tb_n, 0, players.Count - 1);
+                //tb_NameList.Add(tb_n);
+                //table.Controls.Add(tb_s, 1, players.Count - 1);
+                //tb_SurnList.Add(tb_s);
+            }
+
+            for (int i = 0; i < players.Count; i++)
+            {
+                tb_NameList[i].Text = players[i].Name;
+                tb_SurnList[i].Text = players[i].Surname;
+
+            }
+        }
     }
 }
