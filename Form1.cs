@@ -67,21 +67,11 @@ namespace STournament
                 this.Height += 20;
                 table.RowCount++;
             }
-            while (players.Count > tb_SurnList.Count)
+            for(int i = 0; i < players.Count; i++)
             {
-                //TextBox tb_n = new TextBox { AutoSize = true, Name = "tB" };
-                //TextBox tb_s = new TextBox { AutoSize = true, Name = "tB" };
-                //table.Controls.Add(tb_n, 0, players.Count - 1);
-                //tb_NameList.Add(tb_n);
-                //table.Controls.Add(tb_s, 1, players.Count - 1);
-                //tb_SurnList.Add(tb_s);
-            }
-
-            for (int i = 0; i < players.Count; i++)
-            {
-                tb_NameList[i].Text = players[i].Name;
-                tb_SurnList[i].Text = players[i].Surname;
-
+                table.Rows[i].Cells[0].Value = i+1;
+                table.Rows[i].Cells[1].Value = players[i].Surname;
+                table.Rows[i].Cells[2].Value = players[i].Name;
             }
         }
     }
