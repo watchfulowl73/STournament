@@ -6,7 +6,7 @@ public class Player : IComparable<Player>
 {
     public string Name;
     public string Surname;
-    private int rating;
+    public int rating;
     public int coeff_1;
     public int coeff_2;
     public int coeff_3;

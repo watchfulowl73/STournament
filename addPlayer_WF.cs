@@ -1,20 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using System.Text.RegularExpressions;
-using System.IO;
-using System.Net;
-using System.Media;
-using System.CodeDom;
-
-using System.Web;
 
 namespace STournament
 {
@@ -32,14 +17,20 @@ namespace STournament
             if (tB_Rating.Text == "")
             {
                 Form1.pleaseAdd(n, s);
-                this.Close();
-                return;
             }
-            int r = int.Parse(tB_Rating.Text);
-            Form1.pleaseAdd(n,s,r);
-            this.Close();
+            else
+            {
+                int r = int.Parse(tB_Rating.Text);
+                Form1.pleaseAdd(n,s,r);
+            }            
+            tB_Name.Text = "";
+            tB_Surname.Text = "";
+            tB_Rating.Text = "";
         }
 
-        
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

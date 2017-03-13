@@ -36,6 +36,7 @@
             this.add = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tB_Rating = new System.Windows.Forms.TextBox();
+            this.bt_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -80,9 +81,9 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(76, 110);
+            this.add.Location = new System.Drawing.Point(12, 110);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.Size = new System.Drawing.Size(100, 23);
             this.add.TabIndex = 4;
             this.add.Text = "Add";
             this.add.UseVisualStyleBackColor = true;
@@ -108,11 +109,22 @@
             this.tB_Rating.Size = new System.Drawing.Size(100, 20);
             this.tB_Rating.TabIndex = 3;
             // 
+            // bt_exit
+            // 
+            this.bt_exit.Location = new System.Drawing.Point(119, 110);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(100, 23);
+            this.bt_exit.TabIndex = 6;
+            this.bt_exit.Text = "Exit";
+            this.bt_exit.UseVisualStyleBackColor = true;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
+            // 
             // addPlayer_WF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(237, 145);
+            this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.tB_Rating);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.add);
@@ -137,5 +149,6 @@
         public System.Windows.Forms.TextBox tB_Surname;
         public System.Windows.Forms.TextBox tB_Name;
         public System.Windows.Forms.TextBox tB_Rating;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

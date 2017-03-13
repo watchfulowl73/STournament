@@ -40,6 +40,9 @@
             this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eloColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tour1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tour2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +109,10 @@
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Place,
             this.surnameColumn,
-            this.nameColumn});
+            this.nameColumn,
+            this.eloColumn,
+            this.tour1,
+            this.tour2});
             this.table.Location = new System.Drawing.Point(13, 28);
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(471, 276);
@@ -132,6 +138,31 @@
             this.nameColumn.HeaderText = "Name";
             this.nameColumn.Name = "nameColumn";
             this.nameColumn.ReadOnly = true;
+            // 
+            // eloColumn
+            // 
+            this.eloColumn.HeaderText = "Elo";
+            this.eloColumn.MaxInputLength = 4;
+            this.eloColumn.Name = "eloColumn";
+            this.eloColumn.ReadOnly = true;
+            this.eloColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.eloColumn.Width = 40;
+            // 
+            // tour1
+            // 
+            this.tour1.HeaderText = "1";
+            this.tour1.Name = "tour1";
+            this.tour1.ReadOnly = true;
+            this.tour1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tour1.Width = 20;
+            // 
+            // tour2
+            // 
+            this.tour2.HeaderText = "2";
+            this.tour2.Name = "tour2";
+            this.tour2.ReadOnly = true;
+            this.tour2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tour2.Width = 20;
             // 
             // Form1
             // 
@@ -165,6 +196,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Place;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eloColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tour1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tour2;
     }
 }
 
